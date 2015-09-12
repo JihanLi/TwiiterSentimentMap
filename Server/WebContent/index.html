@@ -1,0 +1,72 @@
+<html>
+<head>
+    <meta name="viewport" content="width=10%">
+    <meta charset="utf-8">
+    <title>Tweet map</title>
+
+    <link rel="stylesheet" type="text/css"
+          href="css/bootstrap/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="css/bootstrap/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="css/style.css"/>
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">Tweet Map</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="${activeTab eq 'map' ? 'active' : ''}">
+                    <a href="index.html">
+                        <span class="glyphicon glyphicon-globe"></span>Map
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container"></div>
+<div class="row"></div>
+<div class="col-xs-12 col-md-6 col-lg-6">
+    <form class="form-inline">
+        <div class="form-group">
+            <label for="keyword" class="control-label">Keyword filtering
+            </label>
+
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-filter"></span>
+                </div>
+
+                <select id="keyWord" class="form-control">
+                    <option>Choose a Tag</option>
+                    <option value="music">Music</option>
+                    <option value="happy">happy</option>
+                    <option value="food">food</option>
+                    <option value="dance">dance</option>
+                </select>
+            </div>
+        </div>
+    </form>
+</div>
+<button id="startThread">Starting get Tweets</button>
+<button id="stopThread" style="display:none">Stopping get Tweets</button>
+<div id="messages"></div>
+<div id="eventMsg"></div>
+<div class="row">
+    <div id="map-canvas"></div>
+</div>
+
+    <script src="js/jquery/jquery-2.0.3.min.js"></script>
+    <script src="js/js-cookie/js.cookie.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=visualization"></script>
+    <script src="js/tweetMap.js"></script>
+    
+</body>
+</html>
